@@ -1,5 +1,5 @@
 
-import {useContext, useState} from 'react'
+import {useContext, useState, useEffect} from 'react'
 import ethLogo from '../../assets/eth.png';
 import uniswapLogo from '../../assets/uniswap.png';
 import { HiOutlineDotsVertical } from 'react-icons/hi';
@@ -9,13 +9,13 @@ import Image from 'next/image';
 import { TransactionContext } from '../../context/TransactionContext';
 
 const style = {
-  wrapper: `p-4 w-screen flex justify-between items-center`,
-  headerLogo: `flex w-1/4 items-center justify-start`,
-  nav: `flex-1 flex justify-center items-center`,
+  wrapper: `p-4 w-screen flex flex-col md:flex-row justify-between items-center`,
+  headerLogo: `flex w-1/4 items-center justify-start mb-2`,
+  nav: `flex-1 flex justify-center items-center mb-2`,
   navItemsContainer: `flex bg-[#191B1F] rounded-3xl`,
   navItem: `px-4 py-2 m-1 flex items-center text-lg font-semibold text-[0.9rem] cursor-pointer rounded-3xl`,
   activeNavItem: `bg-[#20242A]`,
-  buttonsContainer: `flex w-1/4 justify-end items-center`,
+  buttonsContainer: `flex w-1/4 justify-center md:justify-end items-center`,
   button: `flex items-center bg-[#191B1F] rounded-2xl mx-2 text-[0.9rem] font-semibold cursor-pointer`,
   buttonPadding: `p-2`,
   buttonTextContainer: `h-8 flex items-center`,
@@ -26,10 +26,18 @@ const style = {
 export default function Header() {
   const [selectedNav, setSelectedNav] = useState('swap')
   const { connectWallet, currentAccount } = useContext(TransactionContext)
+  const [userName, setUserName] = useState('')
 
   console.log(connectWallet, currentAccount)
 
-  const shortedAddress = address => {
+  useEffect(() => {
+    if (!currentAccount) return
+
+    setUserName(shortenAddress(currentAccount))
+
+  }, [currentAccount])
+
+  const shortenAddress = address => {
     return address.substring(0, 6) + '...' + address.substring(address.length - 4, address.length)
   }
 
@@ -88,7 +96,7 @@ export default function Header() {
         { currentAccount ? (
            <div className={`${style.button} ${style.buttonPadding}`}>
            <div className={`${style.buttonAccent} ${style.buttonPadding}`}>
-             {shortedAddress(currentAccount)}
+             {userName}
            </div>
          </div>
         ) : (
