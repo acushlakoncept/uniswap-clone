@@ -4,6 +4,11 @@ export const userSchema = {
   type: 'document',
   fields: [
     {
+      name: 'address',
+      title: 'Wallet Address',
+      type: 'string',
+    },
+    {
       name: 'userName',
       title: 'User Name',
       type: 'string',
@@ -15,7 +20,7 @@ export const userSchema = {
       of: [
         {
           type: 'reference',
-          to: [{type: 'transactions'}],
+          to: [{ type: 'transactions' }],
         },
       ],
     },

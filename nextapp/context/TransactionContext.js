@@ -35,6 +35,22 @@ export const TransactionProvider = ({children}) => {
   useEffect(() => {
     checkIfWalletIsConnected()
   }, [])
+
+  useEffect(() => {
+    if(!currentAccount) return
+
+    ;(async () => {
+      const userDoc = {
+        _id: currentAccount,
+        _type: 'users',
+        userName: 'Unnamed',
+        address: currentAccount,
+      }
+
+      await client.createIfNotExists(userDoc)
+    })()
+
+  }, [currentAccount])
   
   const connectWallet = async (metamask = eth) => {
     try {
