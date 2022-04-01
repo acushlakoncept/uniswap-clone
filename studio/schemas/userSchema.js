@@ -1,5 +1,5 @@
 export const userSchema = {
-  name: 'user',
+  name: 'users',
   title: 'Users',
   type: 'document',
   fields: [
@@ -15,7 +15,7 @@ export const userSchema = {
       of: [
         {
           type: 'reference',
-          to: [{type: 'transaction'}],
+          to: [{type: 'transactions'}],
         },
       ],
     },

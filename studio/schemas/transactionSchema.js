@@ -1,5 +1,5 @@
 export const transactionSchema = {
-  name: 'transaction',
+  name: 'transactions',
   title: 'Transactions',
   type: 'document',
   fields: [
