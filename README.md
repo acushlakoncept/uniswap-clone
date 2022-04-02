@@ -20,7 +20,8 @@ This is a simple UNISWAP clone app, you can use to send eth between wallets usin
 ```bash
  git clone git@github.com:acushlakoncept/uniswap-clone.git
 
- `cd uniswap-clone`
+ cd uniswap-clone
+ ```
 
  The app contains three directories
  > First one contains NextJS app
@@ -43,4 +44,6 @@ This is a simple UNISWAP clone app, you can use to send eth between wallets usin
 run `npx hardhat compile` to compile the contract
 run `npx hardhat run scripts/deploy.js --network ropsten` to deploy contract to ropsten network
 
+## Acknowledgement
 
+[Build Uniswap Blockchain Web 3.0 App with Solidity | Next.js | Sanity.io by Clever Programmer](https://www.youtube.com/watch?v=xXxjRzdYIss)
