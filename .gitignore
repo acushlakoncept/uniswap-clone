@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /studio/node_modules
+/smart_contracts/hardhat.config.js
 /.pnp
 .pnp.js
 
@@ -36,3 +37,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+

@@ -9,13 +9,13 @@ module.exports = {
     // rinkeby: {
     //   url: "https://eth-rinkeby.alchemyapi.io/v2/mE",
     //   accounts: [
-    //     '528770f9ad102544d8e5832bf51adae4d2993749a913dc518e155a40a0490679'
+    //     'METAMASK PRIVATE KEY'
     //   ],
     // },
     ropsten: {
-      url: "https://eth-ropsten.alchemyapi.io/v2/K88PutR5ZxDngxxqx6W9r8vYwShOTLtj",
+      url: "ALCHEMY URL",
       accounts: [
-        '528770f9ad102544d8e5832bf51adae4d2993749a913dc518e155a40a0490679'
+        'METAMASK PRIVATE KEY'
       ],
       gas: 5500000,  // Gas limit, how much gas we are willing to spent
       gasPrice: 20000000000, // Gas price, how much we are willing to pay for unit of gas
